@@ -1,13 +1,14 @@
 {
   "name": "pomelo-cloud-server",
   "version": "1.0.0",
-  "description": "柚子云 - 自定义个人建站面板",
-  "main": "main.js",
+  "description": "柚子云 - 服务端",
+  "author": "ghostxbh",
   "scripts": {
-    "start": "node app.js",
+    "start": "node panel.js",
+    "pm2": "pm2 start panel.js",
+    "pm2i4": "pm2 start panel.js -i 4",
     "lint": "eslint --ext \".js\" src --fix"
   },
-  "author": "PomeloCloud",
   "license": "MIT",
   "dependencies": {
     "adm-zip": "^0.5.5",
@@ -31,10 +32,27 @@
     "should": "^13.2.3",
     "supertest": "^6.1.6"
   },
+  "repository": {
+    "type": "git",
+    "url2gitee": "git+https://gitee.com/ghostxbh/pomelo-cloud-server",
+    "url2github": "git+https://github.com/ghostxbh/pomelo-cloud-server"
+  },
+  "bugs": {
+    "url": "https://gitee.com/ghostxbh/pomelo-cloud-server/issues"
+  },
   "engines": {
-    "node": ">=8.0.0"
+    "node": ">=8.*",
+    "npm": ">=4.*"
   },
   "ci": {
     "version": "8"
-  }
+  },
+  "keywords": [
+    "web-panel",
+    "express",
+    "panel",
+    "socket",
+    "admin",
+    "node"
+  ]
 }
