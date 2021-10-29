@@ -9,7 +9,7 @@
     "pm2i4": "pm2 start panel.js -i 4",
     "lint": "eslint --ext \".js\" src --fix"
   },
-  "license": "MIT",
+  "license": "apache",
   "dependencies": {
     "adm-zip": "^0.5.5",
     "debug": "^4.3.1",
@@ -34,8 +34,12 @@
   },
   "repository": {
     "type": "git",
-    "url2gitee": "git+https://gitee.com/ghostxbh/pomelo-cloud-server",
-    "url2github": "git+https://github.com/ghostxbh/pomelo-cloud-server"
+    "gitee": {
+      "url": "git+https://gitee.com/ghostxbh/pomelo-cloud-server"
+    },
+    "github": {
+      "url": "git+https://github.com/ghostxbh/pomelo-cloud-server"
+    }
   },
   "bugs": {
     "url": "https://gitee.com/ghostxbh/pomelo-cloud-server/issues"
