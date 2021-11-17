@@ -23,7 +23,8 @@ class XmlParseConfig {
       // attrValueProcessor: (val, attrName) => he.decode(val, {isAttributeValue: true}),//转换期间处理标签值。如 HTML 解码、单词大写等。仅适用于字符串的情况
       // tagValueProcessor : (val, tagName) => he.decode(val), //在转换过程中处理属性值。如 HTML 解码、单词大写等。仅适用于字符串的情况
       stopNodes: ['parse-me-as-string'],//不需要解析的标签名称数组。相反，它们的值被解析为字符串
-      supressEmptyNode: true, // 单行标签取消后缀
+      supressEmptyNode: true, //单行标签取消后缀
+      format: true, //格式化
     };
   }
 }

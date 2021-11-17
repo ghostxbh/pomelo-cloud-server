@@ -15,7 +15,7 @@ const RandomCodeType = {
   NU: 'nu',// number and upper case
   LU: 'lu',// lower case and upper case
   NLU: 'nlu',// number、lower case and upper case
-}
+};
 
 exports.RandomCodeType = RandomCodeType;
 
@@ -39,11 +39,12 @@ exports.CommonUtil = {
    * 生成随机码
    * @param {number} min 最小数
    * @param {number} max 最大数
+   * @param {number} fixed 小数点
    * @param {number} len 长度
    * @param {{U: string, NLU: string, NU: string, LU: string, L: string, N: string, NL: string}} type 随机码类型
    * @returns {string | number} 随机码
    */
-  randomCode({min, max, len, type = RandomCodeType}) {
+  randomCode({min, max, fixed, len, type = RandomCodeType}) {
     let res = '';
     // 解析各类型数组
     const combination = (type) => {
@@ -83,9 +84,13 @@ exports.CommonUtil = {
 
     // 获取最大最小区间数据
     if (min || max) {
+      if (fixed) {
+        res = ((Math.random() * (max - min + 1)) + min).toFixed(fixed);
+        return res;
+      }
       res = Math.floor(Math.random() * (max - min + 1)) + min;
       return res;
     }
     return res;
   },
-}
+};

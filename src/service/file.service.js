@@ -6,21 +6,26 @@
 const fs = require('fs');
 const os = require('os');
 const ADMZIP = require('adm-zip');
-const DateUtil = require('../utils/date.util');
-const {CommonUtil} = require('../utils/common.util');
-const {COMMON, FILE_COMMON} = require('../data/constant');
+const DateUtil = require('../core/utils/date.util');
+const {CommonUtil} = require('../core/utils/common.util');
+const {COMMON, FILE_COMMON} = require('../domain/data/constant');
 const PATH = FILE_COMMON.CONFIG_PATH + FILE_COMMON.FILE;
 const DOWNLOAD_FILE_NMAE = DateUtil.getDate() + '_download.zip';
 const logger = require('../components/pclogger/logger.config').logger();
 
-const FileService = {
+class FileService {
+
+  static readFile(name, path, type, {conversionType, }) {
+
+  }
+
   /**
    * 获取文件列表
    * @param {string} path 路径 (default: file.json rootPath)
    * @param {any} options 选项
    * @return {[any]} 文件列表
    */
-  fileList(path, options) {
+  static fileList(path, options) {
     const {page} = options;
     let result = {};
 
@@ -40,7 +45,7 @@ const FileService = {
       result = {path, fileList, condition: {...options}};
     }
     return result;
-  },
+  }
 
   /**
    * 写入文件
@@ -63,7 +68,7 @@ const FileService = {
         }
       }, 3000);
     }
-  },
+  }
 
   /**
    * 下载文件
@@ -107,7 +112,7 @@ const FileService = {
       }
     };
     return getFilePath();
-  },
+  }
 
   /**
    * 删除文件/文件夹
@@ -133,7 +138,7 @@ const FileService = {
       }
     });
     return true;
-  },
+  }
 };
 
 const FileCommon = {
