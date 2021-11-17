@@ -15,7 +15,7 @@ var http = require('http');
 var app = require('./app');
 var fs = require('fs');
 var logger = require('log4js').getLogger();
-var PORT = fs.readFileSync('../config/server-port.pl');
+var PORT = fs.readFileSync('../../config/server-port.pl');
 var port = normalizePort(process.env.PORT || PORT);
 app.set('port', port);
 
